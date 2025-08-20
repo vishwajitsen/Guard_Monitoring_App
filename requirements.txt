@@ -1,0 +1,12 @@
+ttkbootstrap==1.10.1
+pandas>=2.0
+openpyxl>=3.1
+opencv-python>=4.8
+Pillow>=10.0
+geocoder>=1.38
+requests>=2.31
+qrcode>=7.4
+openlocationcode>=1.0.1
+qrcode[pil]
+opencv-python
+pillow
