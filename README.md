@@ -5,14 +5,23 @@ A desktop application built with Python for guard attendance monitoring using ph
 🚀 How to Run on Windows
 
 1. Clone or Download the Project
+
+
 git clone https://github.com/vishwajitsen/Guard_Monitoring_App.git
+
+
 cd Guard_Monitoring_App
 
 2. Create and Activate Virtual Environment
+
 python -m venv .venv
+
+
 .venv\Scripts\activate
 
+
 3. Install Required Dependencies
+
 pip install -r requirements.txt
 
 4. (Optional) Set Google Maps API Key
@@ -22,6 +31,8 @@ Create a .env file in the project root:
 GOOGLE_MAPS_API_KEY=your_api_key_here
 
 5. Run the Application
+
+
 python -m app.main
 
 📂 Project Structure
