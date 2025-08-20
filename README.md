@@ -1,66 +1,45 @@
-# Guard_Monitoring_App
+Guard Monitoring App
 
-A beautiful maroon-themed desktop app to register guards, log in, capture their selfie + current location, and take QR-based attendance (start/end). Everything is saved to Excel files.
+A desktop application built with Python for guard attendance monitoring using photo, location, and QR code scanning.
 
-## Features
-- Maroon-themed, modern **Tkinter + ttkbootstrap** GUI.
-- **Register/Login** using phone or email (user id) + password.
-- **All data saved to Excel** (in `data/`):
-  - `users.xlsx` → guard master file (user id + photo + details).
-  - `attendance.xlsx` → each activity row: selfie capture, QR start, QR end.
-- **Capture photo** (from camera or file) and **current location**.
-- **Scan QR** using your webcam (OpenCV QRCodeDetector, no external zbar needed).
-- **Admin dashboard** with filters and export.
+🚀 How to Run on Windows
 
-## Folder Structure
-```
+1. Clone or Download the Project
+git clone https://github.com/vishwajitsen/Guard_Monitoring_App.git
+cd Guard_Monitoring_App
+
+2. Create and Activate Virtual Environment
+python -m venv .venv
+.venv\Scripts\activate
+
+3. Install Required Dependencies
+pip install -r requirements.txt
+
+4. (Optional) Set Google Maps API Key
+
+Create a .env file in the project root:
+
+GOOGLE_MAPS_API_KEY=your_api_key_here
+
+5. Run the Application
+python -m app.main
+
+📂 Project Structure
 Guard_Monitoring_App/
-├─ app/
-│  ├─ main.py
-│  ├─ ui/
-│  │  └─ theme.py
-│  └─ utils/
-│     ├─ storage.py
-│     ├─ camera.py
-│     └─ geo.py
-├─ data/
-│  ├─ users.xlsx
-│  └─ attendance.xlsx
-├─ photos/              # saved selfies/uploads
-├─ qr/                  # optional: saved/loaded QR images
-├─ requirements.txt
-└─ README.md
-```
+│── app/
+│   ├── main.py         # Main entry point
+│   ├── ui/             # UI (theme, components)
+│   ├── utils/          # Utility functions (camera, QR, etc.)
+│── data/               # Auto-created: users, attendance, photos
+│── requirements.txt    # Dependencies
+│── README.md
 
-## Quick Start
-1. Create a virtual environment and install requirements:
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate    # Windows
-   source .venv/bin/activate   # macOS/Linux
+🛠 Features
 
-   pip install -r requirements.txt
-   ```
+✅ User Registration with photo
+✅ Secure Login
+✅ Attendance upload with photo + location
+✅ QR Code scan for shift management
+✅ Admin dashboard for monitoring
 
-2. Run the app:
-   ```bash
-   python app/main.py
-   ```
-
-> If geolocation fails due to network restrictions, the app will kindly ask the guard to enter the location manually.
-
-## Excel Schemas
-### `data/users.xlsx`
-| user_id | name | phone | email | password_hash | photo_path | created_at |
-|--------:|------|-------|-------|---------------|------------|------------|
-
-### `data/attendance.xlsx`
-| record_id | user_id | timestamp | latitude | longitude | photo_path | action | location_source | qr_payload |
-|----------:|--------:|-----------|----------|-----------|------------|--------|-----------------|------------|
-
-Actions: `LOGIN_PHOTO`, `QR_START`, `QR_END`.
-
-## Notes
-- Passwords are stored as SHA-256 hashes.
-- Webcam optional: you can also upload a selfie from file.
-- Admin dashboard: open from the main screen to review/filter/export attendance.
+👉 To stop the app, just close the window or press CTRL+C in CMD.
